@@ -5,6 +5,6 @@ Router.get('/', controller.getDepartment)
 Router.get('/:id', controller.getDepartmentById)
 Router.post('/create', controller.createDepartment)
 Router.put('/update/:id', controller.updateDepartment)
-Router.delete('/delete', controller.deleteDepartmentById)
+Router.delete('/delete/:id', controller.deleteDepartmentById)
 
 module.exports = Router
