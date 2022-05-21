@@ -16,7 +16,13 @@ const postInventory = async (req, res) => {
 }
 
 const putInventory = async (req, res) => {
-    let putsInventory = await Inventory.findOneAndReplace({ _id: req.params.id })
+    let putsInventory = await Inventory.findOneAndReplace(
+        { _id: req.params.id },
+        {
+            ...req.body.createdDate
+        },
+        { department_id: req.params.departmentId }
+    )
     console.log('Updated Inventory!')
     res.send(putsInventory)
 }
