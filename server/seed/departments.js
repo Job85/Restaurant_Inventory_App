@@ -11,7 +11,7 @@ const main = async () => {
     ]
 
     await Department.insertMany(departments)
-    console.log(`Created ${departmentTitle}!`)
+    console.log(`Created department(s)!`)
 }
 
 const run = async () => {
