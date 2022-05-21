@@ -4,7 +4,7 @@ const { Department } = require('../models')
 
 const getDepartment = async (req, res) => {
     let gotDepartment = await Department.find({})
-    console.log('gotDepartment')
+    console.log('Got Department')
     res.send(gotDepartment)
 }
 
@@ -13,12 +13,13 @@ const createDepartment = async (req, res) => {
         req.body
     )
     await department.save()
+    console.log('Created Department')
     res.send(department)
 }
 
 const updateDepartment = async (req, res) => {
     let putsDepartment = await Department.findOneAndUpdate({})
-    console.log('putsDepartment')
+    console.log('Updated Department!')
     res.send(putsDepartment)
 }
 
