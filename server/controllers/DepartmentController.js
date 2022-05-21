@@ -8,6 +8,12 @@ const getDepartment = async (req, res) => {
     res.send(gotDepartment)
 }
 
+const getDepartmentById = async (req, res) => {
+    console.log(req)
+    let gotDepartmentById = await Department.find({ _id: req.params.id })
+    console.log('Got Department by Id!')
+    res.send(gotDepartmentById)
+}
 const createDepartment = async (req, res) => {
     const department = new Department(
         req.body
@@ -18,20 +24,21 @@ const createDepartment = async (req, res) => {
 }
 
 const updateDepartment = async (req, res) => {
-    let putsDepartment = await Department.findOneAndUpdate({})
+    let putsDepartment = await Department.findOneAndReplace({ _id: req.params.id })
     console.log('Updated Department!')
     res.send(putsDepartment)
 }
 
-const deleteDepartment = async (req, res) => {
-    let deletedDepartment = await Department.findOneAndRemove({})
+const deleteDepartmentById = async (req, res) => {
+    let deletedDepartment = await Department.findOneAndRemove({ _id: req.params.id })
     console.log('deletedDepartment')
     res.send(deletedDepartment)
 }
 
 module.exports = {
     getDepartment,
+    getDepartmentById,
     createDepartment,
     updateDepartment,
-    deleteDepartment
+    deleteDepartmentById
 }
