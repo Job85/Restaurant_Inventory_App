@@ -6,6 +6,7 @@ const getInventory = async (req, res) => {
     console.log('Got Inventory')
     res.send(gotInventory)
 }
+
 const postInventory = async (req, res) => {
     const inventory = new Inventory(
         req.body
@@ -15,13 +16,13 @@ const postInventory = async (req, res) => {
 }
 
 const putInventory = async (req, res) => {
-    let putsInventory = await Inventory.findOneAndUpdate({})
+    let putsInventory = await Inventory.findOneAndReplace({ _id: req.params.id })
     console.log('Updated Inventory!')
     res.send(putsInventory)
 }
 
-const deleteInventory = async (req, res) => {
-    let deletedInventory = await Inventory.findOneAndRemove({})
+const deleteInventoryById = async (req, res) => {
+    let deletedInventory = await Inventory.findOneAndRemove({ _id: req.params.id })
     console.log('Deleted Inventory!')
     res.send(deletedInventory)
 }
@@ -30,5 +31,5 @@ module.exports = {
     getInventory,
     postInventory,
     putInventory,
-    deleteInventory
+    deleteInventoryById
 }
