@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(logger('dev'))
 
 app.get('/', (req, res) => {
-    res.send({ msg: 'Server Running ' })
+    res.send({ msg: `Server Running on port ${PORT}` })
 })
 
 
