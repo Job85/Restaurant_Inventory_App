@@ -3,9 +3,9 @@ const controller = require('../controllers/ItemController')
 
 Router.get('/', controller.getItems)
 Router.get(`/:id`, controller.getItemById)
-Router.post('/create_item', controller.postItem)
-Router.put('/update_item', controller.putItemById)
-Router.delete('/delete_item/:id', controller.deleteItemById)
+Router.post('/create', controller.postItem)
+Router.put('/update', controller.putItemById)
+Router.delete('/delete/:id', controller.deleteItemById)
 
 
 module.exports = Router
