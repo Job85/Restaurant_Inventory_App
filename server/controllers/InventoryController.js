@@ -3,7 +3,7 @@ const { Inventory } = require('../models')
 
 const getInventory = async (req, res) => {
     let gotInventory = await Inventory.find({})
-    console.log('gotInventory')
+    console.log('Got Inventory')
     res.send(gotInventory)
 }
 const postInventory = async (req, res) => {
@@ -16,13 +16,13 @@ const postInventory = async (req, res) => {
 
 const putInventory = async (req, res) => {
     let putsInventory = await Inventory.findOneAndUpdate({})
-    console.log('putsInventory')
+    console.log('Updated Inventory!')
     res.send(putsInventory)
 }
 
 const deleteInventory = async (req, res) => {
     let deletedInventory = await Inventory.findOneAndRemove({})
-    console.log('deletedInventory')
+    console.log('Deleted Inventory!')
     res.send(deletedInventory)
 }
 
