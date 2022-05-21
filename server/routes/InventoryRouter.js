@@ -4,6 +4,6 @@ const controller = require('../controllers/InventoryController')
 Router.get('/', controller.getInventory)
 Router.post(`/create`, controller.postInventory)
 Router.put(`/update/:id`, controller.putInventory)
-Router.delete(`/delete`, controller.deleteInventory)
+Router.delete(`/delete/:id`, controller.deleteInventory)
 
 module.exports = Router
