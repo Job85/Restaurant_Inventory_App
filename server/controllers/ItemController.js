@@ -29,11 +29,11 @@ const putItemById = async (req, res) => {
         {
             ...req.body.location,
             ...req.body.category,
-            ...req.body.item,
-            ...req.body.size,
-            ...req.body.count,
-        },
-        { inventory_id: req.params.inventoryId }
+            ...req.body.item_name,
+            ...req.body.description,
+            ...req.body.unit_measure,
+            ...req.body.case_size
+        }
     )
     console.log('Updated Item!')
     res.send(updateItem)
