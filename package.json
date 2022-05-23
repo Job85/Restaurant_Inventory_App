@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/Job85/Restaurant_Inventory_App/issues"
   },
-  "homepage": "https://github.com/Job85/Restaurant_Inventory_App#readme"
+  "homepage": "https://github.com/Job85/Restaurant_Inventory_App#readme",
+  "dependencies": {
+    "concurrently": "^7.2.1"
+  }
 }
